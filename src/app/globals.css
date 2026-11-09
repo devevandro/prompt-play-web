@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@import '../shared/styles/tokens.css';
+
+body {
+  @apply bg-background font-mono text-body text-foreground antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}

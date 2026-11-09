@@ -1,0 +1,121 @@
+/*
+ * Design tokens do PromptPlay.
+ * Fonte: Figma XlaPMyCdlj4hvI3k8eaaK6 (variáveis + estilos + componentes).
+ * ÚNICO arquivo onde hex/rgb e valores brutos podem aparecer.
+ *
+ * Duas camadas:
+ *  1. :root  -> paleta bruta (--pp-*), espelha os nomes do Figma.
+ *  2. @theme -> tokens semânticos (--color-primary, --text-label...), que o Tailwind
+ *               transforma em utilitárias (bg-primary, text-label, font-display...).
+ * Páginas e componentes usam só a camada 2.
+ */
+
+:root {
+  /* A_* (teal / ciano) */
+  --pp-teal-500: #1f9899; /* A_Principal */
+  --pp-teal-600: #1b8485; /* A_10 */
+  --pp-teal-700: #125b5c; /* A_Escuro_01 */
+  --pp-teal-900: #061e1f; /* A_Escuro_04 */
+  --pp-teal-950: #020a0a; /* A_Escuro_05 */
+  --pp-cyan-300: #85feff; /* A_03 */
+  --pp-cyan-400: #33feff; /* A_04 */
+  --pp-cyan-450: #2fe9eb; /* A_05 */
+
+  /* B_* / C_* (neutros) */
+  --pp-gray-50: #f5f5f5; /* B_F5 */
+  --pp-gray-400: #959595; /* B_95 */
+  --pp-gray-500: #777777; /* B_77 */
+  --pp-gray-600: #666666; /* B_66 */
+  --pp-gray-900: #121212; /* C_12 */
+
+  /* Translúcidos (A_Hover_8% / 16% / 40% e C_Hover_16%) */
+  --pp-teal-a08: rgb(31 152 153 / 0.08);
+  --pp-teal-a16: rgb(31 152 153 / 0.16);
+  --pp-teal-a40: rgb(31 152 153 / 0.4);
+  --pp-gray-a16: rgb(102 102 102 / 0.16);
+
+  /* degrade_btn_grande */
+  --pp-gradient-primary: linear-gradient(-74.7deg, #009899 0%, #002727 98.77%);
+}
+
+@theme {
+  /* Zera as paletas/breakpoints padrão: só existe o que o design define. */
+  --color-*: initial;
+  --breakpoint-*: initial;
+
+  /* ---------- Cor (semântica) ---------- */
+  --color-background: var(--pp-teal-950);
+  --color-surface: var(--pp-teal-900);
+  --color-surface-alt: var(--pp-gray-900);
+
+  --color-foreground: var(--pp-gray-50);
+  --color-foreground-muted: var(--pp-gray-500);
+  --color-foreground-subtle: var(--pp-gray-400);
+
+  --color-primary: var(--pp-teal-500);
+  --color-primary-strong: var(--pp-teal-600);
+  --color-primary-deep: var(--pp-teal-700);
+  --color-accent: var(--pp-cyan-450);
+  --color-accent-soft: var(--pp-cyan-300);
+  --color-focus: var(--pp-cyan-400);
+
+  --color-primary-8: var(--pp-teal-a08);
+  --color-primary-16: var(--pp-teal-a16);
+  --color-primary-40: var(--pp-teal-a40);
+  --color-neutral-16: var(--pp-gray-a16);
+
+  --color-border: var(--pp-teal-a40);
+  --color-border-active: var(--pp-cyan-400);
+
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* ---------- Degradê ---------- */
+  --background-image-gradient-primary: var(--pp-gradient-primary);
+
+  /* ---------- Tipografia ---------- */
+  --font-display: var(--font-montserrat-alternates), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-display: 3.5rem; /* 56 */
+  --text-display--line-height: 4rem; /* 64 */
+  --text-display--letter-spacing: 0.08em; /* 4.48px */
+
+  --text-title: 2.5rem; /* 40 */
+  --text-title--line-height: 3rem; /* 48 */
+  --text-title--letter-spacing: 0.08em; /* 3.2px */
+
+  --text-lead: 1.5rem; /* 24 */
+  --text-lead--line-height: 2rem; /* 32 */
+
+  --text-label: 1.125rem; /* 18 */
+  --text-label--line-height: 1.5rem; /* 24 */
+  --text-label--letter-spacing: 0.04em; /* 0.72px */
+
+  --text-body: 1rem; /* 16 */
+  --text-body--line-height: 1.5rem; /* 24 */
+
+  --text-small: 0.875rem; /* 14 */
+  --text-small--line-height: 1.375rem; /* 22 */
+
+  --text-caption: 0.875rem; /* 14 */
+  --text-caption--line-height: 1.125rem; /* 18 */
+
+  /* ---------- Raio ---------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem; /* 8: botões e cards */
+  --radius-full: 9999px;
+
+  /* ---------- Sombra (glow) ---------- */
+  --shadow-glow-sm: 0 0 8px 2px var(--pp-teal-a40); /* btn hover */
+  --shadow-glow-md: 0 0 16px 0 var(--pp-teal-500); /* card hover */
+
+  /* ---------- Layout ---------- */
+  --container-content: 72.5rem; /* 1160 */
+  --container-page: 100rem; /* 1600 */
+
+  --breakpoint-sm: 576px; /* celulares grandes */
+  --breakpoint-md: 768px; /* tablets */
+  --breakpoint-lg: 992px; /* laptops */
+  --breakpoint-xl: 1200px; /* desktops */
+}
