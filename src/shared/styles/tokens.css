@@ -17,12 +17,17 @@
   --pp-teal-700: #125b5c; /* A_Escuro_01 */
   --pp-teal-900: #061e1f; /* A_Escuro_04 */
   --pp-teal-950: #020a0a; /* A_Escuro_05 */
+  --pp-cyan-200: #a0e1ea; /* download hover (alt) */
   --pp-cyan-300: #85feff; /* A_03 */
   --pp-cyan-400: #33feff; /* A_04 */
   --pp-cyan-450: #2fe9eb; /* A_05 */
+  --pp-cyan-500: #09cece; /* download hover (alt): borda e glow */
 
   /* B_* / C_* (neutros) */
   --pp-gray-50: #f5f5f5; /* B_F5 */
+  --pp-gray-100: #cfcfcf; /* B_CF */
+  --pp-gray-200: #b3b3b3; /* B_B3 */
+  --pp-gray-350: #858585; /* download alt: borda */
   --pp-gray-400: #959595; /* B_95 */
   --pp-gray-500: #777777; /* B_77 */
   --pp-gray-600: #666666; /* B_66 */
@@ -32,7 +37,11 @@
   --pp-teal-a08: rgb(31 152 153 / 0.08);
   --pp-teal-a16: rgb(31 152 153 / 0.16);
   --pp-teal-a40: rgb(31 152 153 / 0.4);
-  --pp-gray-a16: rgb(102 102 102 / 0.16);
+  --pp-gray-a08: rgb(102 102 102 / 0.08); /* C_Hover_8% */
+  --pp-gray-a16: rgb(102 102 102 / 0.16); /* C_Hover_16% */
+  --pp-gray-a40: rgb(102 102 102 / 0.4); /* C_Hover_40% */
+  --pp-gray-350-a16: rgb(133 133 133 / 0.16);
+  --pp-cyan-500-a16: rgb(9 206 206 / 0.16);
 
   /* degrade_btn_grande */
   --pp-gradient-primary: linear-gradient(-74.7deg, #009899 0%, #002727 98.77%);
@@ -49,6 +58,8 @@
   --color-surface-alt: var(--pp-gray-900);
 
   --color-foreground: var(--pp-gray-50);
+  --color-foreground-strong: var(--pp-gray-100);
+  --color-foreground-soft: var(--pp-gray-200);
   --color-foreground-muted: var(--pp-gray-500);
   --color-foreground-subtle: var(--pp-gray-400);
 
@@ -62,7 +73,15 @@
   --color-primary-8: var(--pp-teal-a08);
   --color-primary-16: var(--pp-teal-a16);
   --color-primary-40: var(--pp-teal-a40);
+  --color-neutral-8: var(--pp-gray-a08);
   --color-neutral-16: var(--pp-gray-a16);
+  --color-neutral-40: var(--pp-gray-a40);
+  --color-neutral-alt: var(--pp-gray-350);
+  --color-neutral-alt-16: var(--pp-gray-350-a16);
+  --color-cyan: var(--pp-cyan-500);
+  --color-cyan-16: var(--pp-cyan-500-a16);
+  --color-cyan-soft: var(--pp-cyan-200);
+  --color-divider: var(--pp-gray-600);
 
   --color-border: var(--pp-teal-a40);
   --color-border-active: var(--pp-cyan-400);
@@ -107,6 +126,7 @@
   --radius-full: 9999px;
 
   /* ---------- Sombra (glow) ---------- */
+  --shadow-glow-xs: 0 0 6px 0 var(--pp-cyan-500); /* download hover */
   --shadow-glow-sm: 0 0 8px 2px var(--pp-teal-a40); /* btn hover */
   --shadow-glow-md: 0 0 16px 0 var(--pp-teal-500); /* card hover */
 

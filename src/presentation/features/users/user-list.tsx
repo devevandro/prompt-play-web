@@ -8,8 +8,8 @@ export function UserList({ users }: { users: User[] }) {
       {users.map((u) => (
         <li key={u.id}>
           <Card>
-            <p className="font-medium text-slate-900">{u.name}</p>
-            <p className="text-sm text-slate-500">{u.email}</p>
+            <p className="font-bold text-foreground">{u.name}</p>
+            <p className="text-small text-foreground-muted">{u.email}</p>
           </Card>
         </li>
       ))}

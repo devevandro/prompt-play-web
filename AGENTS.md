@@ -36,6 +36,13 @@ src/
 - Use as utilitárias semânticas (`bg-background`, `text-foreground-muted`, `text-label`, `font-display`, `shadow-glow-md`). As paletas padrão do Tailwind foram desativadas (`--color-*: initial`), então `bg-slate-*`, `text-indigo-*` etc. não geram estilo.
 - Não use cores hex/rgb nem valores arbitrários (`w-[13px]`, `bg-[#...]`) fora do `tokens.css`. Faltou um token? Adicione-o lá.
 
+## Componentes do design system
+
+- `presentation/components/ui`: `Button` (+ `buttonVariants` para links), `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `Option`/`OptionList`, `Card`. `presentation/components/layout`: `Header`, `Footer`, `Brand`.
+- Páginas e features só compõem esses componentes. Faltou algo? Crie o componente aqui (com teste e uma entrada em `/design-system`) antes de usá-lo na página.
+- Variantes via `cva`. `cn()` conhece os tokens do DS (`text-label`, `shadow-glow-*`, `bg-gradient-primary`); ao criar novos tokens de fonte/sombra, registre-os em `shared/lib/cn.ts` e cubra no `cn.test.ts`.
+- Textos e links de site (nav, contato, texto legal) vêm de `shared/config/site.ts`, não ficam dentro dos componentes.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
