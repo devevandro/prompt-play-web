@@ -37,10 +37,16 @@ Fonte de design: arquivo do Figma **PromptPlay** (`XlaPMyCdlj4hvI3k8eaaK6`).
 - Breakpoints: `sm` 576px, `md` 768px, `lg` 992px, `xl` 1200px.
 - Apenas tema escuro.
 
+### Componentes
+
+Em `src/presentation/components/`: `ui/` (`Button`, `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `Option`, `Card`) e `layout/` (`Header`, `Footer`, `Brand`). Todos usam só tokens e têm testes ao lado.
+
+Assets do Figma (ícones e logos) ficam em `public/assets/`. Para revisar visualmente tokens e componentes, rode `pnpm dev` e abra `/design-system`.
+
 ## Status
 
 - [x] Scaffold do projeto
 - [x] Tokens do design system
-- [ ] Componentes base
+- [x] Componentes base
 - [ ] Code Connect
 - [ ] Páginas

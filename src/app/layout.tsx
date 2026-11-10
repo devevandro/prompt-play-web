@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat_Alternates, Space_Mono } from 'next/font/google'
-import Link from 'next/link'
 import './globals.css'
+import { Footer } from '@/presentation/components/layout/footer'
 import { Header } from '@/presentation/components/layout/header'
 import { siteConfig } from '@/shared/config/site'
 
@@ -28,15 +28,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${montserratAlternates.variable} ${spaceMono.variable}`}>
       <body>
-        <Header
-          nav={
-            <>
-              <Link href="/">Home</Link>
-              <Link href="/about">Sobre</Link>
-            </>
-          }
-        />
-        <main className="mx-auto max-w-4xl px-4 py-8">{children}</main>
+        <Header links={siteConfig.nav} cta={siteConfig.cta} />
+        <main className="mx-auto max-w-content px-4 py-8">{children}</main>
+        <Footer contact={siteConfig.contact} links={siteConfig.nav} legal={siteConfig.legal} />
       </body>
     </html>
   )
