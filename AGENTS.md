@@ -50,9 +50,9 @@ Proibido fora de `src/shared/styles/tokens.css`: cores hex/rgb/hsl, valores arbi
 
 ### Componentes
 
-- `presentation/components/ui`: `Button` (+ `buttonVariants` para links), `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `Option`/`OptionList`, `Card`. `presentation/components/layout`: `Header`, `Footer`, `Brand`.
+- `presentation/components/ui`: `Button` (+ `buttonVariants` para links), `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `MoreLink`, `ThemeCard`, `Option`/`OptionList`, `Card`. `presentation/components/layout`: `Container` (coluna de 1160px: use em toda seção/página), `Header`, `Footer`, `Brand`. `presentation/features/home`: `Hero`, `ThemesSection`.
 - Componente novo: crie em `presentation/components/ui|layout` com variantes via `cva`, só tokens, um teste ao lado e uma entrada em `/design-system` (`src/app/design-system/page.tsx`) antes de usá-lo na página.
-- Assets do Figma ficam em `public/assets/` (nunca referencie URLs temporárias do Figma).
+- Assets do Figma ficam em `public/assets/` em `icons/`, `brand/`, `hero/`, `themes/` e `backgrounds/` (nunca referencie URLs temporárias do Figma). Imagens de fundo de seção são decorativas: `next/image` com `fill`, `alt=""` e `-z-10` dentro de uma seção `relative isolate`.
 - Textos e links do site (nav, contato, texto legal) vêm de `shared/config/site.ts`, não ficam dentro dos componentes.
 
 ### Fluxo para implementar uma tela

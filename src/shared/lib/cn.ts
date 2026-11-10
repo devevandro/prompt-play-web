@@ -9,9 +9,26 @@ import { extendTailwindMerge } from 'tailwind-merge'
 const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
-      'font-size': [{ text: ['display', 'title', 'lead', 'label', 'body', 'small', 'caption'] }],
-      shadow: [{ shadow: ['glow-xs', 'glow-sm', 'glow-md'] }],
-      'bg-image': [{ bg: ['gradient-primary'] }],
+      'font-size': [
+        {
+          text: [
+            'hero',
+            'heading',
+            'body-lg',
+            'link',
+            'display',
+            'title',
+            'lead',
+            'label',
+            'body',
+            'small',
+            'caption',
+          ],
+        },
+      ],
+      'max-w': [{ 'max-w': ['content', 'page'] }],
+      shadow: [{ shadow: ['glow-xs', 'glow-sm', 'glow-md', 'glow-soft'] }],
+      'bg-image': [{ bg: ['gradient-primary', 'hero'] }],
     },
   },
 })

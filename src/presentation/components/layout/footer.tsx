@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { NavLink } from '@/presentation/components/ui/nav-link'
+import { Container } from './container'
 import type { HeaderLink } from './header'
 
 export interface FooterProps {
@@ -12,7 +13,7 @@ export interface FooterProps {
 export function Footer({ contact, links, legal }: FooterProps) {
   return (
     <footer className="relative overflow-hidden bg-background pt-20 pb-8">
-      <div className="mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-4">
+      <Container className="grid gap-10 lg:grid-cols-4">
         <div>
           <Image src="/assets/brand/logo-wordmark.svg" alt="PromptPlay" width={152} height={30} />
         </div>
@@ -46,7 +47,7 @@ export function Footer({ contact, links, legal }: FooterProps) {
             ))}
           </ul>
         </div>
-      </div>
+      </Container>
 
       <p className="mt-16 text-center text-label text-foreground-muted">{legal}</p>
 

@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className={`${montserratAlternates.variable} ${spaceMono.variable}`}>
       <body>
         <Header links={siteConfig.nav} cta={siteConfig.cta} />
-        <main className="mx-auto max-w-content px-4 py-8">{children}</main>
+        <main>{children}</main>
         <Footer contact={siteConfig.contact} links={siteConfig.nav} legal={siteConfig.legal} />
       </body>
     </html>

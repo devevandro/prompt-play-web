@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { buttonVariants } from '@/presentation/components/ui/button'
 import { NavLink } from '@/presentation/components/ui/nav-link'
 import { Brand } from './brand'
+import { Container } from './container'
 
 export interface HeaderLink {
   label: string
@@ -15,14 +16,14 @@ export interface HeaderProps {
   activeHref?: string
 }
 
-/** Figma: menu/footer > menu. Links de seção somem abaixo de `md`; o CTA permanece. */
+/** Figma: menu/footer > menu. Links de seção somem abaixo de `lg` (não cabem junto da marca e do CTA); o CTA permanece. */
 export function Header({ links, cta, activeHref }: HeaderProps) {
   return (
     <header className="bg-background">
-      <div className="mx-auto flex max-w-content items-center justify-between gap-6 px-4 py-4">
+      <Container className="flex items-center justify-between gap-6 py-4">
         <Brand />
         <nav aria-label="Principal" className="flex items-center gap-10">
-          <ul className="hidden items-center gap-10 md:flex">
+          <ul className="hidden items-center gap-10 lg:flex">
             {links.map((link) => (
               <li key={link.href}>
                 <NavLink href={link.href} active={link.href === activeHref}>
@@ -35,7 +36,7 @@ export function Header({ links, cta, activeHref }: HeaderProps) {
             {cta.label}
           </Link>
         </nav>
-      </div>
+      </Container>
     </header>
   )
 }
