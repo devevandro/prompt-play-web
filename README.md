@@ -37,6 +37,10 @@ Fonte de design: arquivo do Figma **PromptPlay** (`XlaPMyCdlj4hvI3k8eaaK6`).
 - Breakpoints: `sm` 576px, `md` 768px, `lg` 992px, `xl` 1200px.
 - Apenas tema escuro.
 
+### Regra de ouro
+
+Páginas só usam tokens e componentes do design system. O ESLint (`eslint.design-system.mjs`) barra cores hex/rgb/hsl e valores arbitrários do Tailwind (`w-[13px]`, `bg-[#fff]`) fora de `tokens.css`. Veja a seção "Design System" do [`AGENTS.md`](./AGENTS.md).
+
 ### Componentes
 
 Em `src/presentation/components/`: `ui/` (`Button`, `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `Option`, `Card`) e `layout/` (`Header`, `Footer`, `Brand`). Todos usam só tokens e têm testes ao lado.
@@ -48,5 +52,6 @@ Assets do Figma (ícones e logos) ficam em `public/assets/`. Para revisar visual
 - [x] Scaffold do projeto
 - [x] Tokens do design system
 - [x] Componentes base
-- [ ] Code Connect
+- [ ] ~~Code Connect~~ (indisponível no plano Starter do Figma)
+- [x] Regras de enforcement do design system (ESLint)
 - [ ] Páginas
