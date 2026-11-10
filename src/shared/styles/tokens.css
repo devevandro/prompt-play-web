@@ -45,6 +45,12 @@
 
   /* degrade_btn_grande */
   --pp-gradient-primary: linear-gradient(-74.7deg, #009899 0%, #002727 98.77%);
+
+  /* Fundo do hero (medido no Figma): brilho teal elíptico no canto superior esquerdo
+     sobre um degradê de surface (esquerda) para background (direita). */
+  --pp-gradient-hero:
+    radial-gradient(ellipse 370px 170px at 0 0, rgb(31 152 153 / 0.42), transparent),
+    linear-gradient(100deg, var(--pp-teal-900) 28%, var(--pp-teal-950) 90%);
 }
 
 @theme {
@@ -91,10 +97,23 @@
 
   /* ---------- Degradê ---------- */
   --background-image-gradient-primary: var(--pp-gradient-primary);
+  --background-image-hero: var(--pp-gradient-hero);
 
   /* ---------- Tipografia ---------- */
   --font-display: var(--font-montserrat-alternates), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-space-mono), ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-hero: 3.5rem; /* 56, sem tracking (medido nos prints do Figma) */
+  --text-hero--line-height: 4.5rem; /* 72 */
+
+  --text-heading: 1.9213rem; /* 30.74: título de card */
+  --text-heading--line-height: 2.5619rem; /* 40.99 */
+
+  --text-body-lg: 1.2806rem; /* 20.49: descrição de card */
+  --text-body-lg--line-height: 1.9213rem; /* 30.74 */
+
+  --text-link: 0.9588rem; /* 15.34: "ver mais opções" */
+  --text-link--line-height: 1.9175rem; /* 30.68 */
 
   --text-display: 3.5rem; /* 56 */
   --text-display--line-height: 4rem; /* 64 */
@@ -122,10 +141,12 @@
 
   /* ---------- Raio ---------- */
   --radius-sm: 0.25rem;
-  --radius-md: 0.5rem; /* 8: botões e cards */
+  --radius-md: 0.5rem; /* 8: botões e cards menores */
+  --radius-lg: 1rem; /* 16: cards de tema */
   --radius-full: 9999px;
 
   /* ---------- Sombra (glow) ---------- */
+  --shadow-glow-soft: 0 0 16px 0 rgb(31 152 153 / 0.3); /* card de tema (medido no Figma) */
   --shadow-glow-xs: 0 0 6px 0 var(--pp-cyan-500); /* download hover */
   --shadow-glow-sm: 0 0 8px 2px var(--pp-teal-a40); /* btn hover */
   --shadow-glow-md: 0 0 16px 0 var(--pp-teal-500); /* card hover */

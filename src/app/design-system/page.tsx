@@ -1,13 +1,16 @@
 import { Radio, Search } from 'lucide-react'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { Container } from '@/presentation/components/layout/container'
 import { Button } from '@/presentation/components/ui/button'
 import { Card } from '@/presentation/components/ui/card'
 import { DownloadButton } from '@/presentation/components/ui/download-button'
+import { MoreLink } from '@/presentation/components/ui/more-link'
 import { NavLink } from '@/presentation/components/ui/nav-link'
 import { Option, OptionList } from '@/presentation/components/ui/option'
 import { OptionCard } from '@/presentation/components/ui/option-card'
 import { SectionTitle } from '@/presentation/components/ui/section-title'
+import { ThemeCard } from '@/presentation/components/ui/theme-card'
 
 export const metadata: Metadata = { title: 'Design System · PromptPlay' }
 
@@ -59,7 +62,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 /** Página de revisão visual do design system: tokens e componentes com variantes/estados. */
 export default function DesignSystemPage() {
   return (
-    <div className="flex flex-col gap-16">
+    <Container className="flex flex-col gap-16 py-8">
       <SectionTitle
         as="h1"
         title="Design System"
@@ -144,6 +147,29 @@ export default function DesignSystemPage() {
         </p>
       </Section>
 
+      <Section title="ThemeCard">
+        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+          <ThemeCard
+            href="#"
+            image={{ src: '/assets/themes/tokyo-night.png', alt: 'Tema Tokyo Night' }}
+            title="Tokyo Night"
+            description="Cores vibrantes e um visual futurista."
+          />
+          <ThemeCard
+            href="#"
+            image={{ src: '/assets/themes/synthwave.png', alt: 'Tema Synthwave' }}
+            title="Synthwave"
+            description="Vibe retro-futurista com cores neon e um toque dos anos 90."
+          />
+        </div>
+      </Section>
+
+      <Section title="MoreLink">
+        <div className="flex flex-wrap items-center gap-10">
+          <MoreLink href="#">ver mais opções</MoreLink>
+        </div>
+      </Section>
+
       <Section title="NavLink">
         <div className="flex flex-wrap items-center gap-10">
           <NavLink href="#">Temas</NavLink>
@@ -175,6 +201,6 @@ export default function DesignSystemPage() {
       <Section title="Card">
         <Card className="max-w-sm">Container genérico com a superfície do DS.</Card>
       </Section>
-    </div>
+    </Container>
   )
 }

@@ -43,9 +43,9 @@ Páginas só usam tokens e componentes do design system. O ESLint (`eslint.desig
 
 ### Componentes
 
-Em `src/presentation/components/`: `ui/` (`Button`, `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `Option`, `Card`) e `layout/` (`Header`, `Footer`, `Brand`). Todos usam só tokens e têm testes ao lado.
+Em `src/presentation/components/`: `ui/` (`Button`, `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `MoreLink`, `ThemeCard`, `Option`, `Card`) e `layout/` (`Container`, `Header`, `Footer`, `Brand`). Todos usam só tokens e têm testes ao lado.
 
-Assets do Figma (ícones e logos) ficam em `public/assets/`. Para revisar visualmente tokens e componentes, rode `pnpm dev` e abra `/design-system`.
+Assets do Figma ficam em `public/assets/` (`icons/`, `brand/`, `hero/`, `themes/` e `backgrounds/`). Para revisar visualmente tokens e componentes, rode `pnpm dev` e abra `/design-system`.
 
 ## Status
 
@@ -54,4 +54,4 @@ Assets do Figma (ícones e logos) ficam em `public/assets/`. Para revisar visual
 - [x] Componentes base
 - [ ] ~~Code Connect~~ (indisponível no plano Starter do Figma)
 - [x] Regras de enforcement do design system (ESLint)
-- [ ] Páginas
+- [ ] Páginas: home (hero e temas feitos; comandos, download e footer pendentes)

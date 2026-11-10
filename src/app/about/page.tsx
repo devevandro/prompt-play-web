@@ -1,3 +1,9 @@
+import { Container } from '@/presentation/components/layout/container'
+
 export default function AboutPage() {
-  return <h1 className="text-2xl font-bold">Sobre</h1>
+  return (
+    <Container className="py-8">
+      <h1 className="font-display text-title font-extrabold uppercase">Sobre</h1>
+    </Container>
+  )
 }

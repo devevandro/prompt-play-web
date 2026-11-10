@@ -1,6 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { cn } from '@/shared/lib/cn'
+import { MoreLink } from './more-link'
 
 export interface SectionTitleProps {
   title: string
@@ -34,19 +33,11 @@ export function SectionTitle({
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
-      <div className="flex items-end justify-between gap-4">
+      <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
         <Heading className="font-display text-title font-extrabold text-foreground uppercase md:text-display">
           {title}
         </Heading>
-        {action && (
-          <Link
-            href={action.href}
-            className="flex shrink-0 items-center gap-5 px-0.5 py-px text-small text-foreground-muted uppercase underline hover:text-primary"
-          >
-            {action.label}
-            <Image src="/assets/icons/north-east-muted.svg" alt="" width={15} height={15} />
-          </Link>
-        )}
+        {action && <MoreLink href={action.href}>{action.label}</MoreLink>}
       </div>
       {description && <p className="text-lead text-foreground-muted">{description}</p>}
     </div>
