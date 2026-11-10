@@ -30,18 +30,37 @@ src/
 - `pnpm dev` · `pnpm build` · `pnpm lint` · `pnpm typecheck` · `pnpm test` · `pnpm format`
 - Testes: Vitest + Testing Library, arquivos `*.test.ts(x)` ao lado do código. Casos de uso devem ser testados sem React.
 
-## Design tokens
+## Design System
 
-- Todas as cores, fontes, tamanhos de texto, raios, sombras e breakpoints vivem em `src/shared/styles/tokens.css` (fonte: Figma PromptPlay).
+**Fonte de design:** Figma `PromptPlay` — https://www.figma.com/design/XlaPMyCdlj4hvI3k8eaaK6/PromptPlay (página `site` = telas, página `componente` = componentes). Só tema escuro. Code Connect não é usado (o plano Starter do Figma não o suporta).
+
+Telas (`node-id`): home `1-2549` · themes `411-546` · commands `483-8671` · comma_playback `500-8819` · download `356-292` e `607-3885` · command_source `500-9236` · command_03 `507-4162`.
+
+### Regra de ouro
+
+Páginas e features **nunca inventam estilo**: só usam tokens e componentes do design system (DS). Se uma tela precisa de algo que o DS não tem, **adicione ao DS primeiro** (token ou componente), depois use na página.
+
+Proibido fora de `src/shared/styles/tokens.css`: cores hex/rgb/hsl, valores arbitrários do Tailwind (`w-[13px]`, `bg-[#fff]`, `p-[calc(...)]`), fontes e sombras soltas. O ESLint barra isso (`eslint.design-system.mjs`, regra `no-restricted-syntax`) e o hook de pre-commit também. Exceção pontual só com `// eslint-disable-next-line no-restricted-syntax` e justificativa.
+
+### Tokens
+
+- `src/shared/styles/tokens.css`: paleta bruta `--pp-*` em `:root` e tokens semânticos no `@theme` do Tailwind v4. Cores, fontes, escala de texto, raios, sombras e breakpoints (`sm` 576 · `md` 768 · `lg` 992 · `xl` 1200).
 - Use as utilitárias semânticas (`bg-background`, `text-foreground-muted`, `text-label`, `font-display`, `shadow-glow-md`). As paletas padrão do Tailwind foram desativadas (`--color-*: initial`), então `bg-slate-*`, `text-indigo-*` etc. não geram estilo.
-- Não use cores hex/rgb nem valores arbitrários (`w-[13px]`, `bg-[#...]`) fora do `tokens.css`. Faltou um token? Adicione-o lá.
+- Token novo: edite `tokens.css`. Se for tamanho de fonte, sombra ou degradê, registre também em `shared/lib/cn.ts` (senão o `tailwind-merge` o trata como cor) e cubra em `cn.test.ts`.
 
-## Componentes do design system
+### Componentes
 
 - `presentation/components/ui`: `Button` (+ `buttonVariants` para links), `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `Option`/`OptionList`, `Card`. `presentation/components/layout`: `Header`, `Footer`, `Brand`.
-- Páginas e features só compõem esses componentes. Faltou algo? Crie o componente aqui (com teste e uma entrada em `/design-system`) antes de usá-lo na página.
-- Variantes via `cva`. `cn()` conhece os tokens do DS (`text-label`, `shadow-glow-*`, `bg-gradient-primary`); ao criar novos tokens de fonte/sombra, registre-os em `shared/lib/cn.ts` e cubra no `cn.test.ts`.
-- Textos e links de site (nav, contato, texto legal) vêm de `shared/config/site.ts`, não ficam dentro dos componentes.
+- Componente novo: crie em `presentation/components/ui|layout` com variantes via `cva`, só tokens, um teste ao lado e uma entrada em `/design-system` (`src/app/design-system/page.tsx`) antes de usá-lo na página.
+- Assets do Figma ficam em `public/assets/` (nunca referencie URLs temporárias do Figma).
+- Textos e links do site (nav, contato, texto legal) vêm de `shared/config/site.ts`, não ficam dentro dos componentes.
+
+### Fluxo para implementar uma tela
+
+1. `get_design_context` + `get_screenshot` do frame (skill `figma:figma-design-to-code`).
+2. Monte a página reutilizando **somente** componentes e tokens do DS; lógica em `presentation/features/<nome>`.
+3. Adapte o código de referência do Figma ao projeto, sem colar o output cru.
+4. Compare com o screenshot (desktop e mobile) e rode `pnpm lint`, `pnpm typecheck`, `pnpm test` antes de avançar.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
