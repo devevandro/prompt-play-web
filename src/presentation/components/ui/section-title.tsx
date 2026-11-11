@@ -9,6 +9,8 @@ export interface SectionTitleProps {
   /** `section`: título grande com descrição. `subtitle`: título menor em cor primária. */
   variant?: 'section' | 'subtitle'
   as?: 'h1' | 'h2' | 'h3'
+  /** `id` do título (para `aria-labelledby` da seção). */
+  id?: string
   className?: string
 }
 
@@ -19,11 +21,13 @@ export function SectionTitle({
   action,
   variant = 'section',
   as: Heading = 'h2',
+  id,
   className,
 }: SectionTitleProps) {
   if (variant === 'subtitle') {
     return (
       <Heading
+        id={id}
         className={cn('font-display text-title font-extrabold text-primary capitalize', className)}
       >
         {title}

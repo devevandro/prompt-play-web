@@ -2,8 +2,12 @@ import { Radio, Search } from 'lucide-react'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Container } from '@/presentation/components/layout/container'
+import { Accordion } from '@/presentation/components/ui/accordion'
 import { Button } from '@/presentation/components/ui/button'
 import { Card } from '@/presentation/components/ui/card'
+import { CommandChip } from '@/presentation/components/ui/command-chip'
+import { CommandTable } from '@/presentation/components/ui/command-table'
+import { Divider } from '@/presentation/components/ui/divider'
 import { DownloadButton } from '@/presentation/components/ui/download-button'
 import { MoreLink } from '@/presentation/components/ui/more-link'
 import { NavLink } from '@/presentation/components/ui/nav-link'
@@ -196,6 +200,22 @@ export default function DesignSystemPage() {
           <Option>Selecione outra opção</Option>
           <Option selected>Opção selecionada</Option>
         </OptionList>
+      </Section>
+
+      <Section title="CommandChip / CommandTable">
+        <CommandChip>music</CommandChip>
+        <CommandTable
+          headers={['Comando', 'Descrição']}
+          rows={[
+            { commands: ['music'], description: 'Abre o player na biblioteca de músicas locais.' },
+            { commands: ['radio', 'fm'], description: 'Abre o player em transmissões de rádio.' },
+          ]}
+        />
+      </Section>
+
+      <Section title="Accordion / Divider">
+        <Accordion summary="Resumo do grupo de comandos">Conteúdo do acordeão.</Accordion>
+        <Divider />
       </Section>
 
       <Section title="Card">
