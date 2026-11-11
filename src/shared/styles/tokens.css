@@ -15,6 +15,7 @@
   --pp-teal-500: #1f9899; /* A_Principal */
   --pp-teal-600: #1b8485; /* A_10 */
   --pp-teal-700: #125b5c; /* A_Escuro_01 */
+  --pp-teal-800: #0a3333; /* A_Escuro_03 */
   --pp-teal-900: #061e1f; /* A_Escuro_04 */
   --pp-teal-950: #020a0a; /* A_Escuro_05 */
   --pp-cyan-200: #a0e1ea; /* download hover (alt) */
@@ -31,7 +32,9 @@
   --pp-gray-400: #959595; /* B_95 */
   --pp-gray-500: #777777; /* B_77 */
   --pp-gray-600: #666666; /* B_66 */
+  --pp-gray-700: #5b5b5b; /* borda da tabela */
   --pp-gray-900: #121212; /* C_12 */
+  --pp-black: #000000;
 
   /* Translúcidos (A_Hover_8% / 16% / 40% e C_Hover_16%) */
   --pp-teal-a08: rgb(31 152 153 / 0.08);
@@ -40,6 +43,8 @@
   --pp-gray-a08: rgb(102 102 102 / 0.08); /* C_Hover_8% */
   --pp-gray-a16: rgb(102 102 102 / 0.16); /* C_Hover_16% */
   --pp-gray-a40: rgb(102 102 102 / 0.4); /* C_Hover_40% */
+  --pp-gray-850-a60: rgb(28 28 28 / 0.6); /* chip de comando (linha preta) */
+  --pp-black-a60: rgb(0 0 0 / 0.6); /* chip de comando (linha cinza) */
   --pp-gray-350-a16: rgb(133 133 133 / 0.16);
   --pp-cyan-500-a16: rgb(9 206 206 / 0.16);
 
@@ -62,6 +67,11 @@
   --color-background: var(--pp-teal-950);
   --color-surface: var(--pp-teal-900);
   --color-surface-alt: var(--pp-gray-900);
+  --color-surface-teal: var(--pp-teal-800);
+  --color-canvas: var(--pp-black);
+  --color-chip: var(--pp-gray-850-a60);
+  --color-chip-dark: var(--pp-black-a60);
+  --color-table-border: var(--pp-gray-700);
 
   --color-foreground: var(--pp-gray-50);
   --color-foreground-strong: var(--pp-gray-100);

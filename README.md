@@ -43,9 +43,9 @@ Páginas só usam tokens e componentes do design system. O ESLint (`eslint.desig
 
 ### Componentes
 
-Em `src/presentation/components/`: `ui/` (`Button`, `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `MoreLink`, `ThemeCard`, `Option`, `Card`) e `layout/` (`Container`, `Header`, `Footer`, `Brand`). Todos usam só tokens e têm testes ao lado.
+Em `src/presentation/components/`: `ui/` (`Button`, `DownloadButton`, `OptionCard`, `NavLink`, `SectionTitle`, `MoreLink`, `ThemeCard`, `Option`, `Card`, `Accordion`, `CommandTable`, `CommandChip`, `Divider`) e `layout/` (`Container`, `Header`, `Footer`, `Brand`). Todos usam só tokens e têm testes ao lado.
 
-Assets do Figma ficam em `public/assets/` (`icons/`, `brand/`, `hero/`, `themes/` e `backgrounds/`). Para revisar visualmente tokens e componentes, rode `pnpm dev` e abra `/design-system`.
+Assets do Figma ficam em `public/assets/` (`icons/`, `brand/`, `hero/`, `themes/`, `decorations/` e `backgrounds/`). Para revisar visualmente tokens e componentes, rode `pnpm dev` e abra `/design-system`.
 
 ## Status
 
@@ -54,4 +54,5 @@ Assets do Figma ficam em `public/assets/` (`icons/`, `brand/`, `hero/`, `themes/
 - [x] Componentes base
 - [ ] ~~Code Connect~~ (indisponível no plano Starter do Figma)
 - [x] Regras de enforcement do design system (ESLint)
-- [ ] Páginas: home (hero e temas feitos; comandos, download e footer pendentes)
+- [x] Página `/comandos` (tabela de primeiro acesso e acordeões; conteúdo expandido de Playback, Sources e Library pendente)
+- [ ] Páginas: home (hero, temas e download feitos; faltam ícones apple/linux/github do download e a seção de comandos); rota `/download` pendente

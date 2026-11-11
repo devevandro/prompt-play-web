@@ -1,3 +1,4 @@
+import { DownloadSection } from '@/presentation/features/home/download-section'
 import { Hero } from '@/presentation/features/home/hero'
 import { ThemesSection } from '@/presentation/features/home/themes-section'
 import { siteConfig } from '@/shared/config/site'
@@ -8,6 +9,7 @@ export default function HomePage() {
     <>
       <Hero {...siteConfig.hero} />
       <ThemesSection {...siteConfig.themes} />
+      <DownloadSection {...siteConfig.download} />
     </>
   )
 }
